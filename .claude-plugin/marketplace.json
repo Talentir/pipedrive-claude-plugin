@@ -1,0 +1,13 @@
+{
+  "name": "pipedrive-marketplace",
+  "owner": {
+    "name": "Talentir"
+  },
+  "plugins": [
+    {
+      "name": "pipedrive",
+      "source": "./pipedrive",
+      "description": "Manage your Pipedrive CRM — deals, contacts, organizations, activities, and pipeline. Search, create, update, and analyze your sales data directly from Claude."
+    }
+  ]
+}
