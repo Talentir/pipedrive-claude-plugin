@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "pipedrive": {
+      "type": "http",
+      "url": "https://vercel-app-talentir.vercel.app/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${PIPEDRIVE_API_TOKEN}"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "pipedrive",
+  "version": "1.0.0",
+  "description": "Manage your Pipedrive CRM — deals, contacts, organizations, activities, and pipeline. Search, create, update, and analyze your sales data directly from Claude.",
+  "author": {
+    "name": "Talentir"
+  }
+}
