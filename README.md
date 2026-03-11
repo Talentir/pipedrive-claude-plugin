@@ -59,6 +59,16 @@ All list endpoints support `sort` (e.g. `"add_time DESC"`), pagination, and filt
 
 This plugin connects to a hosted MCP server on Vercel that proxies requests to the Pipedrive API. Your API token is passed as a Bearer token in each request — the server is stateless and stores nothing.
 
+## Self-Hosting
+
+By default the plugin uses the hosted MCP server. To use your own:
+
+```bash
+export PIPEDRIVE_MCP_URL="https://your-server.vercel.app/api/mcp"
+```
+
+If not set, it falls back to the hosted server at `vercel-app-talentir.vercel.app`. See [Talentir/pipedrive-mcp-server](https://github.com/Talentir/pipedrive-mcp-server) to deploy your own.
+
 ## License
 
 MIT
