@@ -8,13 +8,15 @@ Connect Claude Code to your Pipedrive CRM. Manage deals, contacts, leads, organi
 claude plugin add Talentir/pipedrive-claude-plugin
 ```
 
-Then set your Pipedrive API token:
+Then set your environment variables:
 
 ```bash
 export PIPEDRIVE_API_TOKEN="your_token_here"
+export PIPEDRIVE_MCP_URL="https://your-server.vercel.app/api/mcp"
 ```
 
-Find your token in Pipedrive: **Settings > Personal preferences > API**.
+- **PIPEDRIVE_API_TOKEN** — Your Pipedrive API token. Find it in **Settings > Personal preferences > API**.
+- **PIPEDRIVE_MCP_URL** — URL of your MCP server deployment. See [Deploying your own server](#deploying-your-own-server) below.
 
 Your token never leaves your machine — it's sent as a Bearer token per-request and is not stored on the server.
 
@@ -59,15 +61,14 @@ All list endpoints support `sort` (e.g. `"add_time DESC"`), pagination, and filt
 
 This plugin connects to a hosted MCP server on Vercel that proxies requests to the Pipedrive API. Your API token is passed as a Bearer token in each request — the server is stateless and stores nothing.
 
-## Self-Hosting
+## Deploying Your Own Server
 
-By default the plugin uses the hosted MCP server. To use your own:
+The MCP server is open source. Deploy it to Vercel in one click:
 
-```bash
-export PIPEDRIVE_MCP_URL="https://your-server.vercel.app/api/mcp"
-```
-
-If not set, it falls back to the hosted server at `vercel-app-talentir.vercel.app`. See [Talentir/pipedrive-mcp-server](https://github.com/Talentir/pipedrive-mcp-server) to deploy your own.
+1. Fork [Talentir/pipedrive-mcp-server](https://github.com/Talentir/pipedrive-mcp-server)
+2. Import to [Vercel](https://vercel.com/new)
+3. Deploy — no environment variables needed on the server side
+4. Set `PIPEDRIVE_MCP_URL` to `https://your-project.vercel.app/api/mcp`
 
 ## License
 
